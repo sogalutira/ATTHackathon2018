@@ -9,6 +9,10 @@ class PartnerScreen extends React.Component {
     return (
       <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
         <Text>Your Dining Partner</Text>
+        <Button
+        	title="End"
+        	onPress={() => this.props.navigation.navigate('End')}
+        />
       </View>
     );
   }

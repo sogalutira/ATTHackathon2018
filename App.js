@@ -8,6 +8,7 @@ import LocationScreen from './Location/index';
 import PartnerScreen from './Partner/index';
 import TimeScreen from './Time/index';
 import LoginScreen from './Login/index';
+import EndScreen from './End/index';
 
 class HomeScreen extends React.Component {
   render() {
@@ -47,6 +48,9 @@ export default StackNavigator({
   Partner: {
     screen: PartnerScreen,
   },
+  End: {
+    screen: EndScreen,
+  }
 });
 
 
