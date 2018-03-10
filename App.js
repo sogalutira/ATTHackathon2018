@@ -7,6 +7,7 @@ import CreateProfileScreen from './SignUp/CreateProfile';
 import LocationScreen from './Location/index';
 import PartnerScreen from './Partner/index';
 import TimeScreen from './Time/index';
+import LoginScreen from './Login/index';
 
 class HomeScreen extends React.Component {
   render() {
@@ -14,7 +15,11 @@ class HomeScreen extends React.Component {
       <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
         <Text>Home Screen</Text>
         <Button
-          title="Go to Create Profile"
+          title="Log In"
+          onPress={() => this.props.navigation.navigate('Login')}
+        />
+        <Button
+          title="Sign Up"
           onPress={() => this.props.navigation.navigate('ProfileForm')}
         />
       </View>
@@ -26,6 +31,9 @@ class HomeScreen extends React.Component {
 export default StackNavigator({
   Home: {
     screen: HomeScreen,
+  },
+  Login: {
+    screen: LoginScreen,
   },
   ProfileForm: {
     screen: CreateProfileScreen,
