@@ -3,7 +3,10 @@ import { StyleSheet, Text, View, Button } from 'react-native';
 import {
   StackNavigator,
 } from 'react-navigation';
-import CreateProfileScreen from './CreateProfile';
+import CreateProfileScreen from './SignUp/CreateProfile';
+import LocationScreen from './Location/index';
+import PartnerScreen from './Partner/index';
+import TimeScreen from './Time/index';
 
 class HomeScreen extends React.Component {
   render() {
@@ -26,7 +29,16 @@ export default StackNavigator({
   },
   ProfileForm: {
     screen: CreateProfileScreen,
-  }
+  },
+  Location: {
+    screen: LocationScreen,
+  },
+  Time: {
+    screen: TimeScreen,
+  },
+  Partner: {
+    screen: PartnerScreen,
+  },
 });
 
 
