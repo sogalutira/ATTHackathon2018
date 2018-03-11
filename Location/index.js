@@ -25,7 +25,7 @@ class LocationScreen extends React.Component {
         <Text style={{fontFamily:'playfairDisplay', marginTop:20, marginBottom:20, fontWeight:'bold', fontSize: 25, color:'white'}}>Places Nearby:</Text>
         <View style={{flex: 1, flexDirection: 'row', justifyContent: 'space-around', flexWrap: 'wrap'}}>
           <View style={{width: 150, height: 150, marginBottom:35}}>
-            <Image source={{uri: 'https://www.thebeijinger.com/files/u265699/rsz_big-mac_0.jpg'}} style={{width: 150, height: 150}} />
+            <Image source={{uri: 'https://s3-media1.fl.yelpcdn.com/bphoto/xNzhwhPZhfeRy-wFU_GXlQ/ls.jpg'}} style={{width: 150, height: 150}} />
             <Text style={{textAlign: 'center', fontWeight:'bold', color: 'white'}}>McDonald's Kaimuki</Text>
           </View>
           <View style={{width: 150, height: 150, marginBottom:35}}>
