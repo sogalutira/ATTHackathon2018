@@ -3,7 +3,8 @@ import { StyleSheet, Text, View, TextInput } from 'react-native';
 import {
   StackNavigator,
 } from 'react-navigation';
-import { Button } from 'react-native-elements'
+import { Button } from 'react-native-elements';
+import { Font, LinearGradient } from 'expo';
 
 class LocationScreen extends React.Component {
   constructor(props) {
@@ -15,7 +16,7 @@ class LocationScreen extends React.Component {
 
   render() {
     return (
-      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', backgroundColor: '#2e6fa5' }}>
+      <LinearGradient colors={['#2a6ea7', '#1a4569' , '#13344f']} style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
         <Text style={{fontFamily:'playfairDisplay', marginTop:10, marginBottom:10, fontWeight:'bold', fontSize: 40, textAlign:'center', color:'white'}}>What Do You Want To Eat?</Text>
         <TextInput style={{borderColor: '#F1FAEE', borderWidth: 2, width:'90%', padding:10, backgroundColor: 'white' }}
            placeholder ={this.state.text}
@@ -43,7 +44,7 @@ class LocationScreen extends React.Component {
         	title="Go to Time"
         	onPress={() => this.props.navigation.navigate('Time')}
         />
-      </View>
+      </LinearGradient>
     );
   }
 }
