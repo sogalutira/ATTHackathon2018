@@ -17,7 +17,8 @@ class TimeScreen extends React.Component {
       timeRange1: '',
       timeRange2: '',
       timeRange3: '',
-      timeRange4: ''
+      timeRange4: '',
+      chosenTime: ''
     }
     this.formatAMPM = this.formatAMPM.bind(this);
     this.getTimeRange1 = this.getTimeRange1.bind(this);
@@ -46,7 +47,7 @@ class TimeScreen extends React.Component {
     var hours = time.getHours();
     var newHours = hours + 1;
     var minutes = time.getMinutes();
-    var ampm = newHours >= 12 ? 'pm' : 'am';
+    var ampm = newHours >= 12 ? 'PM' : 'AM';
     newHours = newHours % 12;
     newHours = newHours ? newHours : 12; // the hour '0' should be '12'
     minutes = minutes < 10 ? '0'+minutes : minutes;
@@ -60,7 +61,7 @@ class TimeScreen extends React.Component {
       var hours = time.getHours();
       var newHours = hours + 2;
       var minutes = time.getMinutes();
-      var ampm = newHours >= 12 ? 'pm' : 'am';
+      var ampm = newHours >= 12 ? 'PM' : 'AM';
       newHours = newHours % 12;
       newHours = newHours ? newHours : 12; // the hour '0' should be '12'
       minutes = minutes < 10 ? '0'+minutes : minutes;
@@ -85,20 +86,32 @@ class TimeScreen extends React.Component {
         <Text style={{fontFamily:'playfairDisplay',fontSize:40, textAlign:'center', marginBottom:20, color: 'white'}}>Select A Time</Text>
         <Button
           title={this.state.currentTime}
+          color='white'
+          fontFamily='raleway'
           icon={{name: 'schedule'}}
           buttonStyle={{margin: 10, backgroundColor: '#157efb', borderRadius: 3}}
-          onPress={() => this.props.navigation.navigate('Partner')}
+          onPress={() => this.setState({chosenTime: this.state.currentTime})}
         />
         <Button
           title={this.state.timeRange1}
           icon={{name: 'schedule'}}
+          fontFamily='raleway'
           buttonStyle={{margin: 10, backgroundColor: '#157efb', borderRadius: 3}}
-          onPress={() => this.props.navigation.navigate('Partner')}
+          onPress={() => this.setState({chosenTime: this.state.timeRange1})}
         />
         <Button
           title={this.state.timeRange2}
           icon={{name: 'schedule'}}
+          fontFamily='raleway'
           buttonStyle={{margin: 10, backgroundColor: '#157efb', borderRadius: 3}}
+          onPress={() => this.setState({chosenTime: this.state.timeRange2})}
+        />
+        <Text style={{fontFamily:'raleway', fontSize: 24, marginTop: 30, color: 'white', fontWeight: 'bold'}}>Selected time: {this.state.chosenTime}</Text>
+        <Button
+          small
+          title='Submit'
+          fontFamily='raleway'
+          buttonStyle={{width: 200, margin: 10, backgroundColor: '#157efb', borderRadius: 3}}
           onPress={() => this.props.navigation.navigate('Partner')}
         />
       </View>
