@@ -81,7 +81,8 @@ class HomeScreen extends React.Component {
                     <Label style={{fontFamily:'raleway'}}>Age</Label>
                     <Input />
                   </Item>
-                  <Button block ><Text style={{fontFamily:'raleway'}}>Submit</Text></Button>
+                  <Button block onPress={() => this.props.navigation.navigate('Location')}><Text style={{fontFamily:'raleway'}}>Submit</Text>
+                  </Button>
                 </Form>
               </Tab>
             </Tabs>
