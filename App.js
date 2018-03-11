@@ -63,8 +63,7 @@ class HomeScreen extends React.Component {
                     <Label style={{fontFamily:'raleway'}}>Password</Label>
                     <Input />
                   </Item>
-                  <Button block onPress={() => this.props.navigation.navigate('Location')}><Text style={{fontFamily:'raleway'}}>Login</Text>
-                  </Button>
+                  <Button block onPress={() => this.props.navigation.navigate('Location')}><Text style={{fontFamily:'raleway'}}>Login</Text></Button>
                 </Form>
               </Tab>
               <Tab style={[styles.flex, styles.tab]} heading={ <TabHeading><Text>Sign Up</Text></TabHeading>}>
