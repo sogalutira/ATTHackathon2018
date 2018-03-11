@@ -4,7 +4,6 @@ import {
   Content,
   Button,
   Text,
-  Icon,
   Header,
   Tab,
   Tabs,
@@ -16,7 +15,8 @@ import {
 } from 'native-base';
 import { Col, Row, Grid } from 'react-native-easy-grid';
 import { StyleSheet, Image } from 'react-native';
-import { Font } from 'expo';
+import { Icon } from 'react-native-elements';
+import { Font, LinearGradient } from 'expo';
 import {
   StackNavigator,
 } from 'react-navigation';
@@ -47,7 +47,12 @@ class HomeScreen extends React.Component {
   render() {
     if(this.state.fontLoaded) {
       return (
-        <Container style={[styles.flex, styles.background]}>
+        <LinearGradient colors={['#2a6ea7', '#1a4569' , '#13344f']} style={[styles.flex, styles.background]}>
+          <Icon
+            name='local-dining'
+            color='white'
+            size={50}
+          />
           <Text style={text.title}>Table for Two</Text>
           <Text style={text.desc}>Never eat alone again.</Text>
           <Container style={[styles.flex, styles.container]}>
@@ -87,7 +92,7 @@ class HomeScreen extends React.Component {
               </Tab>
             </Tabs>
           </Container>
-        </Container>
+        </LinearGradient>
       );
     } else {
       return null;
@@ -103,7 +108,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center'
   },
   background: {
-    backgroundColor: '#2a6ea7',
     padding: 30,
     paddingBottom: 125
   },
@@ -122,8 +126,7 @@ const text = StyleSheet.create({
     fontFamily: 'playfairDisplay',
     fontSize: 40,
     textAlign: 'center',
-    color: 'white',
-    marginTop: 30
+    color: 'white'
   },
   desc: {
     fontFamily: 'raleway',
