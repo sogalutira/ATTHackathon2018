@@ -4,7 +4,6 @@ import {
   Content,
   Button,
   Text,
-  Icon,
   Header,
   Tab,
   Tabs,
@@ -16,6 +15,7 @@ import {
 } from 'native-base';
 import { Col, Row, Grid } from 'react-native-easy-grid';
 import { StyleSheet, Image } from 'react-native';
+import { Icon } from 'react-native-elements';
 import { Font } from 'expo';
 import {
   StackNavigator,
@@ -48,6 +48,11 @@ class HomeScreen extends React.Component {
     if(this.state.fontLoaded) {
       return (
         <Container style={[styles.flex, styles.background]}>
+          <Icon
+            name='local-dining'
+            color='white'
+            size={50}
+          />
           <Text style={text.title}>Table for Two</Text>
           <Text style={text.desc}>Never eat alone again.</Text>
           <Container style={[styles.flex, styles.container]}>
@@ -122,8 +127,7 @@ const text = StyleSheet.create({
     fontFamily: 'playfairDisplay',
     fontSize: 40,
     textAlign: 'center',
-    color: 'white',
-    marginTop: 30
+    color: 'white'
   },
   desc: {
     fontFamily: 'raleway',
