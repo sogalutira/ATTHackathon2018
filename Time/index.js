@@ -1,5 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import { Font } from 'expo';
 import {
   StackNavigator,
 } from 'react-navigation';
@@ -11,6 +12,7 @@ class TimeScreen extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      fontLoaded: false,
       currentTime: '',
       timeRange1: '',
       timeRange2: '',
@@ -67,27 +69,36 @@ class TimeScreen extends React.Component {
     }
 
   componentDidMount() {
+    Font.loadAsync({
+      'raleway': require('../assets/fonts/Raleway.ttf'),
+      'playfairDisplay': require('../assets/fonts/PlayfairDisplay.ttf')})
+    this.setState({
+      fontLoaded: true
+    });
     this.formatAMPM();
     this.getTimeRange1();
     this.getTimeRange2();
   }
   render() {
     return (
-      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-        <Text>Select A Time</Text>
+      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', backgroundColor: '#2e6fa5' }}>
+        <Text style={{fontFamily:'playfairDisplay',fontSize:40, textAlign:'center', marginBottom:20, color: 'white'}}>Select A Time</Text>
         <Button
           title={this.state.currentTime}
-          buttonStyle={{margin: 10}}
+          icon={{name: 'schedule'}}
+          buttonStyle={{margin: 10, backgroundColor: '#157efb', borderRadius: 3}}
           onPress={() => this.props.navigation.navigate('Partner')}
         />
         <Button
           title={this.state.timeRange1}
-          buttonStyle={{margin: 10}}
+          icon={{name: 'schedule'}}
+          buttonStyle={{margin: 10, backgroundColor: '#157efb', borderRadius: 3}}
           onPress={() => this.props.navigation.navigate('Partner')}
         />
         <Button
           title={this.state.timeRange2}
-          buttonStyle={{margin: 10}}
+          icon={{name: 'schedule'}}
+          buttonStyle={{margin: 10, backgroundColor: '#157efb', borderRadius: 3}}
           onPress={() => this.props.navigation.navigate('Partner')}
         />
       </View>
