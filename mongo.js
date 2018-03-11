@@ -83,7 +83,6 @@ db.places.insert([{
   type: 'Dine In',
   restaurant: "Chili's",
   address: '4211 Waialae Ave, Honolulu, HI 96816'
-}
 }]);
 
 print ('docs database');
@@ -94,3 +93,4 @@ while (cursor.hasNext()){
 }
 
 db.docs.find();
+db.places.find();
