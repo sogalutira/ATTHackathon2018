@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import { Font } from 'expo';
+import { Font, LinearGradient } from 'expo';
 import {
   StackNavigator,
 } from 'react-navigation';
@@ -52,7 +52,7 @@ class TimeScreen extends React.Component {
     newHours = newHours ? newHours : 12; // the hour '0' should be '12'
     minutes = minutes < 10 ? '0'+minutes : minutes;
     var strTime = newHours + ':' + minutes + ' ' + ampm;
-    this.setState({timeRange1: strTime});  
+    this.setState({timeRange1: strTime});
   }
 
     getTimeRange2 = () => {
@@ -66,7 +66,7 @@ class TimeScreen extends React.Component {
       newHours = newHours ? newHours : 12; // the hour '0' should be '12'
       minutes = minutes < 10 ? '0'+minutes : minutes;
       var strTime = newHours + ':' + minutes + ' ' + ampm;
-      this.setState({timeRange2: strTime});  
+      this.setState({timeRange2: strTime});
     }
 
   componentDidMount() {
@@ -82,7 +82,7 @@ class TimeScreen extends React.Component {
   }
   render() {
     return (
-      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', backgroundColor: '#2e6fa5' }}>
+      <LinearGradient colors={['#2a6ea7', '#1a4569' , '#13344f']} style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
         <Text style={{fontFamily:'playfairDisplay',fontSize:40, textAlign:'center', marginBottom:20, color: 'white'}}>Select A Time</Text>
         <Button
           title={this.state.currentTime}
@@ -115,7 +115,7 @@ class TimeScreen extends React.Component {
           buttonStyle={{width: 200, margin: 10, backgroundColor: '#157efb', borderRadius: 3}}
           onPress={() => this.props.navigation.navigate('Partner')}
         />
-      </View>
+      </LinearGradient>
     );
   }
 }

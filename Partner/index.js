@@ -7,7 +7,7 @@ import {
 } from 'native-base';
 import { StyleSheet, Image } from 'react-native';
 import { StackNavigator } from 'react-navigation';
-import { Font } from 'expo';
+import { Font, LinearGradient } from 'expo';
 
 class PartnerScreen extends React.Component {
   constructor(props) {
@@ -32,7 +32,7 @@ class PartnerScreen extends React.Component {
   render() {
     if(this.state.fontLoaded) {
       return (
-        <Container style={[styles.flex, styles.background]}>
+        <LinearGradient colors={['#2a6ea7', '#1a4569' , '#13344f']} style={[styles.flex, styles.background]}>
           <Text style={text.title}>Your dining partner,</Text>
           <Container style={[styles.flex, styles.container]}>
             <Image
@@ -58,7 +58,7 @@ class PartnerScreen extends React.Component {
               </Text>
             </Button>
           </Container>
-        </Container>
+        </LinearGradient>
       );
     } else {
       return null;

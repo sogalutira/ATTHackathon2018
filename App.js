@@ -16,7 +16,7 @@ import {
 import { Col, Row, Grid } from 'react-native-easy-grid';
 import { StyleSheet, Image } from 'react-native';
 import { Icon } from 'react-native-elements';
-import { Font } from 'expo';
+import { Font, LinearGradient } from 'expo';
 import {
   StackNavigator,
 } from 'react-navigation';
@@ -47,7 +47,7 @@ class HomeScreen extends React.Component {
   render() {
     if(this.state.fontLoaded) {
       return (
-        <Container style={[styles.flex, styles.background]}>
+        <LinearGradient colors={['#2a6ea7', '#1a4569' , '#13344f']} style={[styles.flex, styles.background]}>
           <Icon
             name='local-dining'
             color='white'
@@ -92,7 +92,7 @@ class HomeScreen extends React.Component {
               </Tab>
             </Tabs>
           </Container>
-        </Container>
+        </LinearGradient>
       );
     } else {
       return null;
@@ -108,7 +108,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center'
   },
   background: {
-    backgroundColor: '#2a6ea7',
     padding: 30,
     paddingBottom: 125
   },
