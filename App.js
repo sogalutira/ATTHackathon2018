@@ -20,6 +20,12 @@ import { Font } from 'expo';
 import {
   StackNavigator,
 } from 'react-navigation';
+import CreateProfileScreen from './SignUp/CreateProfile';
+import LocationScreen from './Location/index';
+import PartnerScreen from './Partner/index';
+import TimeScreen from './Time/index';
+import LoginScreen from './Login/index';
+import EndScreen from './End/index';
 
 class HomeScreen extends React.Component {
   constructor(props) {
@@ -135,6 +141,24 @@ const text = StyleSheet.create({
 export default StackNavigator({
   Home: {
     screen: HomeScreen,
+  },
+  Login: {
+    screen: LoginScreen,
+  },
+  ProfileForm: {
+    screen: CreateProfileScreen,
+  },
+  Location: {
+    screen: LocationScreen,
+  },
+  Time: {
+    screen: TimeScreen,
+  },
+  Partner: {
+    screen: PartnerScreen,
+  },
+  End: {
+    screen: EndScreen,
   }
 });
 
