@@ -42,6 +42,50 @@ db.docs.insert([{
   password: 'password'
 }]);
 
+db.createCollection('places');
+
+db.places.insert([{
+  type: 'Fast Food',
+  restaurant: 'McDonalds',
+  address: '3254 Waialae Ave, Honolulu, HI 96816'
+},
+{
+  type: 'Fast Food',
+  restaurant: 'WM Bar-B-Q Burger',
+  address: '3104 Waialae Ave, Honolulu, HI 96816'
+},
+{
+  type: 'Fast Food',
+  restaurant: 'Burger King',
+  address: '2536 S Beretania St, Honolulu, HI 96826'
+},
+{
+  type: 'Fast Food',
+  restaurant: 'McDonalds',
+  address: '4211 Waialae Ave, Honolulu, HI 96816'
+},
+{
+  type: 'Dine In',
+  restaurant: 'Town',
+  address: '3435 Waialae Ave #104, Honolulu, HI 96816'
+},
+{
+  type: 'Dine In',
+  restaurant: 'The Counter',
+  address: '4211 Waialae Ave, Honolulu, HI 96816'
+},
+{
+  type: 'Dine In',
+  restaurant: 'California Pizza Kitchen',
+  address: '4211 Waialae Ave, Honolulu, HI 96816'
+},
+{
+  type: 'Dine In',
+  restaurant: "Chili's",
+  address: '4211 Waialae Ave, Honolulu, HI 96816'
+}
+}]);
+
 print ('docs database');
 
 cursor = db.docs.find();
