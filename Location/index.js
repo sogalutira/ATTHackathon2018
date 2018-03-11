@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, TextInput } from 'react-native';
+import { StyleSheet, Text, View, TextInput, Image } from 'react-native';
 import {
   StackNavigator,
 } from 'react-navigation';
@@ -23,22 +23,26 @@ class LocationScreen extends React.Component {
         />
         <Text style={{fontFamily:'playfairDisplay', marginTop:20, marginBottom:20, fontWeight:'bold', fontSize: 25, color:'white'}}>Places Nearby</Text>
         <View style={{flex: 1, flexDirection: 'row', justifyContent: 'space-around', flexWrap: 'wrap'}}>
-          <View style={{width: 150, height: 150, backgroundColor: '#FFE74C', marginBottom:25}}>
-            <Text style={{textAlign: 'center'}}>I'm a restaurant!</Text>
+          <View style={{width: 150, height: 150, marginBottom:35}}>
+            <Image source={{uri: 'https://www.thebeijinger.com/files/u265699/rsz_big-mac_0.jpg'}} style={{width: 150, height: 150}} />
+            <Text style={{textAlign: 'center', fontWeight:'bold', color: 'white'}}>McDonald's Kaimuki</Text>
           </View>
-          <View style={{width: 150, height: 150, backgroundColor: '#87A330', marginBottom:25}}>
-            <Text style={{textAlign: 'center'}}>So am I!</Text>
+          <View style={{width: 150, height: 150, marginBottom:35}}>
+            <Image source={{uri: 'https://s3-media3.fl.yelpcdn.com/bphoto/MyHj1f4qjaYer0-cFqEhsA/ls.jpg'}} style={{width: 150, height: 150}} />
+            <Text style={{textAlign: 'center', fontWeight:'bold', color: 'white'}}>Koko Head Cafe</Text>
           </View>
-          <View style={{width: 150, height: 150, backgroundColor: '#FFE74C', marginBottom:25}}>
-            <Text style={{textAlign: 'center'}}>You should eat here!</Text>
+          <View style={{width: 150, height: 150, backgroundColor: '#FFE74C', marginBottom:35}}>
+            <Image source={{uri: 'https://s3-media4.fl.yelpcdn.com/bphoto/7t_SEkeLSpOV_Ew6XvH8VQ/ls.jpg'}} style={{width: 150, height: 150}} />
+            <Text style={{textAlign: 'center', fontWeight:'bold', color: 'white'}}>Kan Zaman</Text>
           </View>
-          <View style={{width: 150, height: 150, backgroundColor: '#87A330', marginBottom:25}}>
-            <Text style={{textAlign: 'center'}}>No, eat here!</Text>
+          <View style={{width: 150, height: 150, backgroundColor: '#87A330', marginBottom:35}}>
+            <Image source={{uri: 'https://s3-media4.fl.yelpcdn.com/bphoto/wpf2aklTQYp_aw924DZ2QA/348s.jpg'}} style={{width: 150, height: 150}} />
+            <Text style={{textAlign: 'center', fontWeight:'bold', color: 'white'}}>W & M Bar-B-Q Burger</Text>
           </View>
         </View>
         <Button
           small
-          buttonStyle={{width: 200, margin: 10, backgroundColor: '#157efb', borderRadius: 3, marginBottom:75}}
+          buttonStyle={{width: 200, margin: 10, backgroundColor: '#157efb', borderRadius: 3, marginBottom:50}}
           fontFamily='raleway'
         	title="Go to Time"
         	onPress={() => this.props.navigation.navigate('Time')}
