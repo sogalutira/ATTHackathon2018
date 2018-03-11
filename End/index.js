@@ -1,6 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View, Button } from 'react-native';
 import { StackNavigator } from 'react-navigation';
+import { LinearGradient } from 'expo';
 import { Icon } from 'react-native-elements';
 import { Font } from 'expo';
 
@@ -27,7 +28,7 @@ class EndScreen extends React.Component {
   render() {
     if(this.state.fontLoaded) {
       return (
-        <View style={[styles.flex, styles.background]}>
+        <LinearGradient colors={['#2a6ea7', '#1a4569' , '#13344f']} style={[styles.flex, styles.background]}>
           <Text style={[styles.text, styles.desc]}>Your reservation is set,</Text>
           <Text style={[styles.text, styles.main]}>Bon Appétit!</Text>
           <Icon
@@ -35,7 +36,7 @@ class EndScreen extends React.Component {
             color='white'
             size={80}
           />
-        </View>
+        </LinearGradient>
       );
     } else {
       return null;
