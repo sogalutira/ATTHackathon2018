@@ -106,7 +106,8 @@ class TimeScreen extends React.Component {
           buttonStyle={{margin: 10, backgroundColor: '#157efb', borderRadius: 3}}
           onPress={() => this.setState({chosenTime: this.state.timeRange2})}
         />
-        <Text style={{fontFamily:'raleway', fontSize: 24, marginTop: 30, color: 'white', fontWeight: 'bold'}}>Selected time: {this.state.chosenTime}</Text>
+        <Text style={{fontFamily:'raleway', fontSize: 24, marginTop: 30, color: 'white', fontWeight: 'bold'}}>Selected time:</Text>
+        <Text style={{fontFamily:'raleway', fontSize: 24, height: 45, color: 'white', fontWeight: 'bold'}}>{this.state.chosenTime}</Text>
         <Button
           small
           title='Submit'
