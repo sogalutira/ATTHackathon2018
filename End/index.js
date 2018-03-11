@@ -1,9 +1,8 @@
 import React from 'react';
 import { StyleSheet, Text, View, Button } from 'react-native';
 import { StackNavigator } from 'react-navigation';
-import { LinearGradient } from 'expo';
 import { Icon } from 'react-native-elements';
-import { Font } from 'expo';
+import { Font, LinearGradient } from 'expo';
 
 class EndScreen extends React.Component {
   constructor(props) {
